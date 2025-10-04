@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -22,15 +22,24 @@ const Certificates: React.FC<CertificatesProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detect screen size
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767.98px)");
+    const checkScreen = () => setIsMobile(mediaQuery.matches);
+    checkScreen();
+    mediaQuery.addEventListener("change", checkScreen);
+    return () => mediaQuery.removeEventListener("change", checkScreen);
+  }, []);
+
+  // Navigation: circular for next, linear for previous
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % certificates.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? certificates.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
   };
 
   const openModal = () => setModalOpen(true);
@@ -60,8 +69,8 @@ const Certificates: React.FC<CertificatesProps> = ({
 
         {/* Slider */}
         <div className="relative flex items-center justify-center">
-          {/* Left Button */}
-          {currentIndex !== 0 && (
+          {/* Desktop Left Button - hidden on first certificate */}
+          {!isMobile && currentIndex > 0 && (
             <button
               onClick={prevSlide}
               className="absolute left-0 p-3 transition rounded-full bg-purple-500/20 hover:bg-purple-500/40"
@@ -70,7 +79,7 @@ const Certificates: React.FC<CertificatesProps> = ({
             </button>
           )}
 
-          {/* Certificate Card (clickable) */}
+          {/* Certificate Card */}
           <div
             className={`bg-slate-800/50 p-6 rounded-lg border border-purple-500/20 w-full max-w-md transition-all duration-500 transform cursor-pointer ${
               isVisible.certificates
@@ -113,14 +122,38 @@ const Certificates: React.FC<CertificatesProps> = ({
             )}
           </div>
 
-          {/* Right Button */}
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 p-3 transition rounded-full bg-purple-500/20 hover:bg-purple-500/40"
-          >
-            <ChevronRight className="text-purple-300" size={28} />
-          </button>
+          {/* Desktop Right Button - always visible (circular) */}
+          {!isMobile && (
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 p-3 transition rounded-full bg-purple-500/20 hover:bg-purple-500/40"
+            >
+              <ChevronRight className="text-purple-300" size={28} />
+            </button>
+          )}
         </div>
+
+        {/* Mobile Buttons */}
+        {isMobile && certificates.length > 1 && (
+          <div className="flex justify-center mt-6 space-x-4">
+            {/* Hide left button for first certificate */}
+            {currentIndex > 0 && (
+              <button
+                onClick={prevSlide}
+                className="p-3 transition rounded-full bg-purple-500/20 hover:bg-purple-500/40"
+              >
+                <ChevronLeft className="text-purple-300" size={22} />
+              </button>
+            )}
+            {/* Right button always visible */}
+            <button
+              onClick={nextSlide}
+              className="p-3 transition rounded-full bg-purple-500/20 hover:bg-purple-500/40"
+            >
+              <ChevronRight className="text-purple-300" size={22} />
+            </button>
+          </div>
+        )}
 
         {/* Slide Indicators */}
         <div className="flex justify-center mt-6 space-x-2">
@@ -135,7 +168,7 @@ const Certificates: React.FC<CertificatesProps> = ({
         </div>
       </div>
 
-      {/* Modal for certificate preview */}
+      {/* Modal */}
       {modalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"

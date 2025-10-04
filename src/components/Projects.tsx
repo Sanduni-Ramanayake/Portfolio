@@ -26,7 +26,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Use matchMedia for more reliable breakpoint detection
     const mediaQuery = window.matchMedia("(max-width: 767.98px)");
     const checkScreen = () => setIsMobile(mediaQuery.matches);
     checkScreen();
@@ -34,27 +33,26 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
     return () => mediaQuery.removeEventListener("change", checkScreen);
   }, []);
 
-  // 🔹 Calculate tallest card on mount or when projects change
   useEffect(() => {
-    // Only set equal height if there is more than one project (prevents 0 height bug)
-    if (isMobile && projects.length > 1) {
-      // Wait for next paint to ensure all refs are set
+    if (isMobile && projects.length > 0) {
       setTimeout(() => {
-        const heights = cardRefs.current.map((ref) => ref?.offsetHeight || 0);
+        const heights = cardRefs.current.map((ref) => ref?.scrollHeight || 0);
         const maxHeight = Math.max(...heights);
         setCardHeight(maxHeight > 0 ? maxHeight : undefined);
       }, 0);
     } else {
-      setCardHeight(undefined); // reset for desktop or single project
+      setCardHeight(undefined);
     }
   }, [isMobile, projects]);
 
-  // Show 3 projects on desktop, 1 on mobile
   const projectsPerPage = isMobile ? 1 : 3;
 
   const handleNext = () => {
     if (currentIndex + projectsPerPage < projects.length) {
       setCurrentIndex(currentIndex + 1);
+    } else {
+      // 🔹 Circular navigation only for "Next"
+      setCurrentIndex(0);
     }
   };
 
@@ -84,17 +82,13 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
           <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-500"></div>
         </div>
 
-        {/* Projects Slider */}
         <div className="relative">
-          {/* Desktop/Tablet Left Button */}
-          {!isMobile && (
+          {/* Left Button (hidden on first) */}
+          {!isMobile && currentIndex > 0 && (
             <button
               onClick={handlePrev}
-              className={`absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60 ${
-                currentIndex === 0 ? "opacity-40 cursor-not-allowed" : ""
-              }`}
+              className="absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60"
               style={{ left: "-52px" }}
-              disabled={currentIndex === 0}
             >
               <ChevronLeft size={24} className="text-white" />
             </button>
@@ -111,26 +105,22 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
               .map((project, index) => (
                 <div
                   key={index}
-                  ref={(el) => {
-                    cardRefs.current[index] = el;
-                  }}
-                  className={`group bg-slate-800/50 rounded-lg overflow-hidden border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105 ${
+                  ref={(el) => (cardRefs.current[index] = el)}
+                  className={`group bg-slate-800/50 rounded-lg overflow-hidden border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105 ${
                     isVisible.projects
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-full"
                   }`}
                   style={{
                     height: isMobile && cardHeight ? `${cardHeight}px` : "auto",
-                    minHeight: isMobile ? "min-content" : undefined,
                   }}
                 >
-                  {/* Project Image */}
                   <div className="relative overflow-hidden">
                     {project.image ? (
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="object-cover w-full h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20"
+                        className="object-cover w-full h-48"
                         style={{ borderRadius: "0.75rem 0.75rem 0 0" }}
                       />
                     ) : (
@@ -139,7 +129,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
                       </div>
                     )}
 
-                    {/* Hover overlay with links */}
                     <div className="absolute inset-0 flex items-center justify-center gap-4 transition-opacity duration-300 opacity-0 bg-black/50 group-hover:opacity-100">
                       <a
                         href={project.github}
@@ -160,7 +149,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
                     </div>
                   </div>
 
-                  {/* Project Content */}
                   <div className="p-6">
                     <h3 className="mb-2 text-xl font-semibold text-white">
                       {project.title}
@@ -183,27 +171,21 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
               ))}
           </div>
 
-          {/* Desktop/Tablet Right Button */}
+          {/* Right Button (always visible, circular next) */}
           {!isMobile && (
             <button
               onClick={handleNext}
-              className={`absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60 ${
-                currentIndex + projectsPerPage >= projects.length
-                  ? "opacity-40 cursor-not-allowed"
-                  : ""
-              }`}
+              className="absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60"
               style={{ right: "-52px" }}
-              disabled={currentIndex + projectsPerPage >= projects.length}
             >
               <ChevronRight size={24} className="text-white" />
             </button>
           )}
         </div>
 
-        {/* Mobile Buttons (below grid, like Certificates) */}
+        {/* Mobile Buttons */}
         {isMobile && (
           <div className="flex justify-center mt-6 space-x-4">
-            {/* Show Left button only if not at first project */}
             {currentIndex > 0 && (
               <button
                 onClick={handlePrev}
@@ -212,20 +194,16 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
                 <ChevronLeft size={20} className="text-white" />
               </button>
             )}
-
-            {/* Show Right button only if not at last project */}
-            {currentIndex + projectsPerPage < projects.length && (
-              <button
-                onClick={handleNext}
-                className="p-3 transition rounded-full bg-black/40 hover:bg-black/60"
-              >
-                <ChevronRight size={20} className="text-white" />
-              </button>
-            )}
+            <button
+              onClick={handleNext}
+              className="p-3 transition rounded-full bg-black/40 hover:bg-black/60"
+            >
+              <ChevronRight size={20} className="text-white" />
+            </button>
           </div>
         )}
 
-        {/* Scroll Indicators (only on mobile) */}
+        {/* Mobile Scroll Indicators */}
         {isMobile && (
           <div className="flex justify-center mt-4 space-x-2">
             {projects.map((_, index) => (
