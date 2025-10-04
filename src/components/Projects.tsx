@@ -26,20 +26,26 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < 768); // md breakpoint
+    // Use matchMedia for more reliable breakpoint detection
+    const mediaQuery = window.matchMedia("(max-width: 767.98px)");
+    const checkScreen = () => setIsMobile(mediaQuery.matches);
     checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
+    mediaQuery.addEventListener("change", checkScreen);
+    return () => mediaQuery.removeEventListener("change", checkScreen);
   }, []);
 
   // 🔹 Calculate tallest card on mount or when projects change
   useEffect(() => {
-    if (isMobile && cardRefs.current.length > 0) {
-      const heights = cardRefs.current.map((ref) => ref?.offsetHeight || 0);
-      const maxHeight = Math.max(...heights);
-      setCardHeight(maxHeight);
+    // Only set equal height if there is more than one project (prevents 0 height bug)
+    if (isMobile && projects.length > 1) {
+      // Wait for next paint to ensure all refs are set
+      setTimeout(() => {
+        const heights = cardRefs.current.map((ref) => ref?.offsetHeight || 0);
+        const maxHeight = Math.max(...heights);
+        setCardHeight(maxHeight > 0 ? maxHeight : undefined);
+      }, 0);
     } else {
-      setCardHeight(undefined); // reset for desktop
+      setCardHeight(undefined); // reset for desktop or single project
     }
   }, [isMobile, projects]);
 
@@ -80,12 +86,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
 
         {/* Projects Slider */}
         <div className="relative">
-          {/* Desktop Left Button */}
-          {!isMobile && currentIndex > 0 && (
+          {/* Desktop/Tablet Left Button */}
+          {!isMobile && (
             <button
               onClick={handlePrev}
-              className="absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60"
-              style={{ left: "-52px" }} // moved ~0.3cm (12px) further left from -40px
+              className={`absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60 ${
+                currentIndex === 0 ? "opacity-40 cursor-not-allowed" : ""
+              }`}
+              style={{ left: "-52px" }}
+              disabled={currentIndex === 0}
             >
               <ChevronLeft size={24} className="text-white" />
             </button>
@@ -102,14 +111,17 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
               .map((project, index) => (
                 <div
                   key={index}
-                  ref={(el) => (cardRefs.current[index] = el)}
+                  ref={(el) => {
+                    cardRefs.current[index] = el;
+                  }}
                   className={`group bg-slate-800/50 rounded-lg overflow-hidden border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105 ${
                     isVisible.projects
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-full"
                   }`}
                   style={{
-                    height: isMobile && cardHeight ? `${cardHeight}px` : "auto", // ✅ Equal height only on mobile
+                    height: isMobile && cardHeight ? `${cardHeight}px` : "auto",
+                    minHeight: isMobile ? "min-content" : undefined,
                   }}
                 >
                   {/* Project Image */}
@@ -171,12 +183,17 @@ const Projects: React.FC<ProjectsProps> = ({ projects, isVisible }) => {
               ))}
           </div>
 
-          {/* Desktop Right Button */}
-          {!isMobile && currentIndex + projectsPerPage < projects.length && (
+          {/* Desktop/Tablet Right Button */}
+          {!isMobile && (
             <button
               onClick={handleNext}
-              className="absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60"
-              style={{ right: "-52px" }} // moved ~0.3cm (12px) further right from -40px
+              className={`absolute z-10 p-3 transition -translate-y-1/2 rounded-full bg-black/40 top-1/2 hover:bg-black/60 ${
+                currentIndex + projectsPerPage >= projects.length
+                  ? "opacity-40 cursor-not-allowed"
+                  : ""
+              }`}
+              style={{ right: "-52px" }}
+              disabled={currentIndex + projectsPerPage >= projects.length}
             >
               <ChevronRight size={24} className="text-white" />
             </button>
