@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, activeSection }) => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden space-x-6 md:flex">
+          <div className="hidden space-x-2 md:flex">
             {sections.map((item) => {
               const sectionId =
                 item.toLowerCase() === "home" ? "hero" : item.toLowerCase();
