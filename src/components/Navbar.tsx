@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, activeSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-[100] border-b border-purple-500/20">
+    <nav className="fixed top-0 w-full bg-slate-900/50 backdrop-blur-md z-[100] border-b border-purple-500/20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Navbar Top Row */}
         <div className="flex items-center justify-between py-3">
@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection, activeSection }) => {
         {/* Mobile Menu */}
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="fixed top-[59px] right-0 w-1/2 h-[45vh] bg-slate-900 border-l border-purple-500/20 flex flex-col items-start px-4 py-4 space-y-1 md:hidden animate-slide-down rounded-b-[15px]">
+          <div className="fixed top-[59px] right-0 w-1/2 h-[45vh] bg-slate-900/80 border-l border-purple-500/20 flex flex-col items-start px-4 py-4 space-y-1 md:hidden animate-slide-down rounded-b-[15px]">
             {sections.map((item) => {
               const sectionId =
                 item.toLowerCase() === "home" ? "hero" : item.toLowerCase();
