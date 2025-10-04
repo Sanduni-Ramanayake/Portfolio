@@ -7,14 +7,14 @@ const educationData = [
     institution: "University of Sri Jayewardenepura",
     period: "2023-2027",
     details: [
-      "Currently 3rd Year Student",
+      "As a third-year undergraduate, I have completed modules in Programming (C, VAP, OOP), Web Application Development, Human–Computer Interaction (HCI), Graphic Design, and other ICT-related areas. These studies have strengthened my technical foundation and enhanced my ability to design innovative, user-centered digital solutions.",
       "Actively participated in university events and workshops.",
     ],
     icon: "🎓",
   },
   {
     degree: "G.C.E. Advanced Level (A/L) - Technology Stream",
-    institution: "MR. Deiyandara National College",
+    institution: "MR/ Deiyandara National College",
     period: "2021",
     details: [
       "Engineering Technology - A",
@@ -23,13 +23,13 @@ const educationData = [
     ],
     icon: "📚",
   },
-  {
+  /*{
     degree: "G.C.E. Ordinary Level (O/L)",
     institution: "",
     period: "2017",
     details: "8 A's, 1C",
     icon: "🏅",
-  },
+  },*/
 ];
 
 // Parent timeline (stagger cards)
