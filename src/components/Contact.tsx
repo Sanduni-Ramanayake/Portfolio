@@ -10,10 +10,8 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const form = e.currentTarget;
     const formData = new FormData(form);
-
     setStatus("loading");
 
     try {
@@ -27,9 +25,7 @@ const Contact: React.FC = () => {
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);
-      } else {
-        setStatus("error");
-      }
+      } else setStatus("error");
     } catch (error) {
       console.error(error);
       setStatus("error");
@@ -37,9 +33,9 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="relative py-20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        {/* Section Title */}
+        {/* Title */}
         <div className="mb-16 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -59,7 +55,7 @@ const Contact: React.FC = () => {
             opportunities to be part of your vision.
           </p>
 
-          {/* Contact Links */}
+          {/* Links */}
           <div className="flex flex-col flex-wrap items-center justify-center gap-2 mb-11 sm:flex-row">
             <a
               href="mailto:sandunidimuthunee@gmail.com"
@@ -144,35 +140,50 @@ const Contact: React.FC = () => {
                 {status === "loading" ? "Sending..." : "Send Message"}
               </button>
             </form>
-
-            {/* Status Message */}
-            <AnimatePresence>
-              {status === "success" && (
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.6 }}
-                  className="mt-6 text-lg font-medium text-green-400"
-                >
-                  💌 Thanks for your message! I’m glad you got in touch.
-                </motion.p>
-              )}
-              {status === "error" && (
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.6 }}
-                  className="mt-6 text-lg font-medium text-red-400"
-                >
-                  ⚠️ Oops! Something went wrong. Please try again later.
-                </motion.p>
-              )}
-            </AnimatePresence>
           </div>
         </div>
       </div>
+
+      {/* Animated Popup for Success/Error */}
+      <AnimatePresence>
+        {(status === "success" || status === "error") && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: -50 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className={`p-8 text-center rounded-2xl shadow-xl w-[90%] max-w-md ${
+                status === "success"
+                  ? "bg-gradient-to-br from-purple-600 via-purple-900 to-slate-800"
+                  : "bg-gradient-to-br from-purple-500 via-purple-800 to-slate-900"
+              }`}
+            >
+              <h4 className="mb-3 text-2xl font-bold text-white">
+                {status === "success"
+                  ? "💌 Message Sent!"
+                  : "⚠️ Something Went Wrong"}
+              </h4>
+              <p className="mb-6 text-white/90">
+                {status === "success"
+                  ? "Thanks for your message! I’m glad you got in touch. 💜"
+                  : "⚠️ Oops! Something went wrong. Please try again later."}
+              </p>
+              <button
+                onClick={() => setStatus("idle")}
+                className="px-5 py-2 text-sm font-semibold text-white transition-transform duration-300 rounded-lg bg-black/20 hover:bg-black/30 hover:scale-105"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
