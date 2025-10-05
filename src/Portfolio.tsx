@@ -338,7 +338,7 @@ const Portfolio: React.FC = () => {
         <footer className="border-t py-7 bg-slate-900 border-purple-500/20">
           <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
             <p className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-200 md:text-base">
-              © 2024 Sanduni Ramanayake. All rights reserved.
+              © 2025 Sanduni Ramanayake. All rights reserved.
               <span className="hidden text-gray-400 sm:inline">|</span>
               <span className="text-gray-300">Follow me:</span>
               <span className="flex items-center gap-4">
