@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
               <textarea
                 name="message"
                 rows={5}
-                placeholder="Share your thoughts.I’d be happy to connect with you !"
+                placeholder="Share your thoughts. I’d be happy to connect with you !"
                 required
                 className="w-full px-4 py-3 text-white placeholder-gray-400 transition-colors border border-gray-600 rounded-lg resize-none bg-slate-700/50 focus:outline-none focus:border-purple-500"
               ></textarea>
@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
               </h4>
               <p className="mb-6 text-white/90">
                 {status === "success"
-                  ? "Thanks for your message! I’m glad you got in touch. 💜"
+                  ? "Thanks for your message! I’m glad you got in touch.💜"
                   : "⚠️ Oops! Something went wrong. Please try again later."}
               </p>
               <button
