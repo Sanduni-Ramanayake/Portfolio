@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Phone } from "lucide-react";
 import { FaFacebook } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -55,42 +55,55 @@ const Contact: React.FC = () => {
             opportunities to be part of your vision.
           </p>
 
-          {/* Links */}
-          <div className="flex flex-col flex-wrap items-center justify-center gap-2 mb-11 sm:flex-row">
-            <a
-              href="mailto:sandunidimuthunee@gmail.com"
-              className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
-            >
-              <Mail className="text-purple-400" size={20} />
-              <span>sandunidimuthunee@gmail.com</span>
-            </a>
-            <a
-              href="https://github.com/Sanduni-Ramanayake"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
-            >
-              <Github className="text-purple-400" size={20} />
-              <span>GitHub</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sanduni-ramanayake-a8a4152b3"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
-            >
-              <Linkedin className="text-purple-400" size={20} />
-              <span>LinkedIn</span>
-            </a>
-            <a
-              href="https://www.facebook.com/share/1A3qmE9LUf/?mibextid=wwXIfr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
-            >
-              <FaFacebook className="text-purple-400" size={20} />
-              <span>Facebook</span>
-            </a>
+          {/* Links - Two Rows */}
+          <div className="flex flex-col items-center justify-center gap-2 mb-11">
+            {/* Row 1: Email & Phone */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <a
+                href="mailto:sandunidimuthunee@gmail.com"
+                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
+              >
+                <Mail className="text-purple-400" size={20} />
+                <span>sandunidimuthunee@gmail.com</span>
+              </a>
+              <a
+                href="tel:+94 775488523"
+                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
+              >
+                <Phone className="text-purple-400" size={20} />
+                <span>+94 77 548 8523</span>
+              </a>
+            </div>
+            {/* Row 2: GitHub, LinkedIn, Facebook */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <a
+                href="https://github.com/Sanduni-Ramanayake"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
+              >
+                <Github className="text-purple-400" size={20} />
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sanduni-ramanayake-a8a4152b3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
+              >
+                <Linkedin className="text-purple-400" size={20} />
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1A3qmE9LUf/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
+              >
+                <FaFacebook className="text-purple-400" size={20} />
+                <span>Facebook</span>
+              </a>
+            </div>
           </div>
 
           {/* Contact Form */}
