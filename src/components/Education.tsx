@@ -23,13 +23,13 @@ const educationData = [
     ],
     icon: "📚",
   },
-  /*{
+  {
     degree: "G.C.E. Ordinary Level (O/L)",
-    institution: "",
+    institution: "MR/ Deiyandara National College",
     period: "2017",
     details: "8 A's, 1C",
     icon: "🏅",
-  },*/
+  },
 ];
 
 // Parent timeline (stagger cards)
