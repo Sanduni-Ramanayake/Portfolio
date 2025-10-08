@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
-import { FaFacebook } from "react-icons/fa";
+import { Mail, Github, Linkedin, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Contact: React.FC = () => {
@@ -55,10 +54,10 @@ const Contact: React.FC = () => {
             opportunities to be part of your vision.
           </p>
 
-          {/* Links - Two Rows */}
-          <div className="flex flex-col items-center justify-center gap-2 mb-11">
-            {/* Row 1: Email & WhatsApp */}
-            <div className="flex flex-wrap items-center justify-center gap-2">
+          {/* --- Contact Links (2 Lines Layout) --- */}
+          <div className="flex flex-col items-center gap-3 mb-11">
+            {/* Line 1: Gmail */}
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href="mailto:sandunidimuthunee@gmail.com"
                 className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
@@ -66,31 +65,18 @@ const Contact: React.FC = () => {
                 <Mail className="text-purple-400" size={20} />
                 <span>sandunidimuthunee@gmail.com</span>
               </a>
-
-              {/* WhatsApp Me Button */}
-              <a
-                href="https://wa.me/94775488523?text=Hi%20Sanduni%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-green-500/20 hover:border-green-500/40 hover:scale-105"
-              >
-                {/* WhatsApp Icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="text-purple-400"
-                  width="20"
-                  height="20"
-                >
-                  <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 .02 5.35.02 11.98c0 2.11.55 4.18 1.6 6.02L0 24l6.19-1.61a11.93 11.93 0 0 0 5.81 1.49h.01C18.63 23.88 24 18.52 24 11.98a11.92 11.92 0 0 0-3.48-8.5ZM12 21.5a9.45 9.45 0 0 1-4.83-1.32l-.35-.2-3.68.96.98-3.59-.23-.37a9.42 9.42 0 0 1-1.44-5A9.47 9.47 0 0 1 12 2.48a9.46 9.46 0 0 1 9.47 9.47A9.47 9.47 0 0 1 12 21.5Zm5.22-7.16c-.28-.14-1.64-.81-1.89-.9-.25-.1-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.43-2.25-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.43-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.28-.95.92-.95 2.25s.97 2.61 1.1 2.79c.14.18 1.91 2.91 4.63 4.08.65.28 1.16.45 1.55.58.65.2 1.23.17 1.7.1.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.52-.32Z" />
-                </svg>
-                <span>WhatsApp Me</span>
-              </a>
             </div>
 
-            {/* Row 2: GitHub, LinkedIn, Facebook */}
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            {/* Line 2: Phone + GitHub + LinkedIn */}
+            <div className="flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="tel:+94775488523"
+                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
+              >
+                <Phone className="text-purple-400" size={20} />
+                <span>+94 77 548 8523</span>
+              </a>
+
               <a
                 href="https://github.com/Sanduni-Ramanayake"
                 target="_blank"
@@ -100,6 +86,7 @@ const Contact: React.FC = () => {
                 <Github className="text-purple-400" size={20} />
                 <span>GitHub</span>
               </a>
+
               <a
                 href="https://www.linkedin.com/in/sanduni-ramanayake-a8a4152b3"
                 target="_blank"
@@ -109,19 +96,10 @@ const Contact: React.FC = () => {
                 <Linkedin className="text-purple-400" size={20} />
                 <span>LinkedIn</span>
               </a>
-              <a
-                href="https://www.facebook.com/share/1A3qmE9LUf/?mibextid=wwXIfr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
-              >
-                <FaFacebook className="text-purple-400" size={20} />
-                <span>Facebook</span>
-              </a>
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* --- Contact Form --- */}
           <div className="p-8 border bg-slate-800/30 rounded-2xl border-purple-500/20">
             <h3 className="mb-6 text-2xl font-semibold text-white">
               Send me a message
