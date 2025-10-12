@@ -150,7 +150,7 @@ const projects = [
     tech: [
       "Frontend - React.js + Tailwind CSS ",
       "Backend - Node.js , Express",
-      "Dtabase - MongoDB",
+      "Database - MongoDB",
       "Authentication - Clerk",
     ],
     github: "#",
