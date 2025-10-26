@@ -201,6 +201,19 @@ const projects = [
     github: "#",
     live: "#",
   },
+  {
+    title: "PulseMe - Wellness Tracking App",
+    description:
+      "A mobile wellness app prototype designed in Figma to help users build positive habits and track daily progress. Features include onboarding screens, personalized dashboard, habit insights, and profile settings.",
+    image: "/pulsme.png",
+    tech: [
+      "UI/UX Design - Figma",
+      "Mobile App Design",
+      "Prototype & Interaction",
+    ],
+    github: "#",
+    live: "https://www.figma.com/proto/QOMT8WAzFh2JIO35LAo6XX/PulsMe?node-id=0-1&t=brBxAmxnkdYvvRVa-1",
+  },
 ];
 
 const certificates = [
