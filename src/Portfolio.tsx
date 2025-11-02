@@ -202,6 +202,16 @@ const projects = [
     live: "#",
   },
   {
+    title: "Eventia – Event Management Dashboard",
+    description:
+      "A responsive event management web platform that enables organizers to create, track, and analyze events effortlessly. Includes dashboard analytics, event browsing, detailed management views, and interactive data charts for insights.",
+    image: "/eventia.png",
+    tech: ["UI/UX Design - Figma"],
+    github: "#",
+    live: "https://www.figma.com/design/vFyrgYEZK9thY3NhvUoxAA/Eventia?node-id=0-1&t=kJlCc5L8fjf5JHiE-1",
+  },
+
+  {
     title: "PulseMe - Wellness Tracking App",
     description:
       "A mobile wellness app prototype designed in Figma to help users build positive habits and track daily progress. Features include onboarding screens, personalized dashboard, habit insights, and profile settings.",
