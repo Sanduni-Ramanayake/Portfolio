@@ -131,7 +131,7 @@ const projects = [
     image: "/medi.jpeg",
     tech: ["UI/UX Design - Figma"],
     github: "#",
-    live: "https://www.figma.com/proto/6iM8eTMhdHfvzqxsXF2rog/MediLink.?node-id=0-1&t=zcYGjLIgiIMcBDg8-1",
+    live: "https://www.behance.net/gallery/235519655/MediLink-Healthcare-Appointment-Platform",
   },
   {
     title: "Highway Toll Control System ",
@@ -181,8 +181,32 @@ const projects = [
     image: "/h2.jpeg",
     tech: ["UI/UX Design - Figma"],
     github: "#",
-    live: "https://www.figma.com/proto/6TJ4uWG1KnavjC0b0FLm0S/Zara-Fashion?node-id=1-2&t=S787av2gAmtk4970-1",
+    live: "https://www.behance.net/gallery/235518021/Zara-Fashion-Online-Fashion-Store",
   },*/
+
+  {
+    title: "Eventia – Event Management Dashboard",
+    description:
+      "A responsive event management web platform that enables organizers to create, track, and analyze events effortlessly. Includes dashboard analytics, event browsing, detailed management views, and interactive data charts for insights.",
+    image: "/eventia.png",
+    tech: ["UI/UX Design - Figma"],
+    github: "#",
+    live: "https://www.behance.net/gallery/237726639/Eventia-Event-Management-Dashboard",
+  },
+
+  {
+    title: "PulseMe - Wellness Tracking App",
+    description:
+      "A mobile wellness app prototype designed in Figma to help users build positive habits and track daily progress. Features include onboarding screens, personalized dashboard, habit insights, and profile settings.",
+    image: "/pulsme.png",
+    tech: [
+      "UI/UX Design - Figma",
+      "Mobile App Design",
+      "Prototype & Interaction",
+    ],
+
+    live: "https://www.behance.net/gallery/238098977/PulseMe-Wellness-Tracking-App",
+  },
   {
     title: "Travel App - From Discovery to Destination",
     description:
@@ -200,29 +224,6 @@ const projects = [
     tech: ["UI/UX Design - Adobe XD"],
     github: "#",
     live: "#",
-  },
-  {
-    title: "Eventia – Event Management Dashboard",
-    description:
-      "A responsive event management web platform that enables organizers to create, track, and analyze events effortlessly. Includes dashboard analytics, event browsing, detailed management views, and interactive data charts for insights.",
-    image: "/eventia.png",
-    tech: ["UI/UX Design - Figma"],
-    github: "#",
-    live: "https://www.figma.com/design/vFyrgYEZK9thY3NhvUoxAA/Eventia?node-id=0-1&t=kJlCc5L8fjf5JHiE-1",
-  },
-
-  {
-    title: "PulseMe - Wellness Tracking App",
-    description:
-      "A mobile wellness app prototype designed in Figma to help users build positive habits and track daily progress. Features include onboarding screens, personalized dashboard, habit insights, and profile settings.",
-    image: "/pulsme.png",
-    tech: [
-      "UI/UX Design - Figma",
-      "Mobile App Design",
-      "Prototype & Interaction",
-    ],
-    github: "#",
-    live: "https://www.figma.com/proto/QOMT8WAzFh2JIO35LAo6XX/PulsMe?node-id=0-1&t=brBxAmxnkdYvvRVa-1",
   },
 ];
 
