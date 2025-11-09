@@ -195,7 +195,7 @@ const projects = [
   },
 
   {
-    title: "PulseMe - Wellness Tracking App",
+    title: "PulseMe - Wellness Tracking App ",
     description:
       "A mobile wellness app prototype designed in Figma to help users build positive habits and track daily progress. Features include onboarding screens, personalized dashboard, habit insights, and profile settings.",
     image: "/puls5.png",
