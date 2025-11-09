@@ -174,15 +174,6 @@ const projects = [
     github: "#",
     live: "https://github.com/Sanduni-Ramanayake/TravelX",
   },
-  /*{
-    title: "Zara Fashion - Online Fashion Store",
-    description:
-      "A modern online clothing store concept with stylish UI, responsive layouts, and smooth e-commerce flows. Designed interactive prototypes to simulate real shopping experiences and enhance user-centric design.",
-    image: "/h2.jpeg",
-    tech: ["UI/UX Design - Figma"],
-    github: "#",
-    live: "https://www.behance.net/gallery/235518021/Zara-Fashion-Online-Fashion-Store",
-  },*/
 
   {
     title: "Eventia – Event Management Dashboard",
@@ -224,6 +215,15 @@ const projects = [
     tech: ["UI/UX Design - Adobe XD"],
     github: "#",
     live: "#",
+  },
+  {
+    title: "Zara Fashion - Online Fashion Store",
+    description:
+      "A modern online clothing store concept with stylish UI, responsive layouts, and smooth e-commerce flows. Designed interactive prototypes to simulate real shopping experiences and enhance user-centric design.",
+    image: "/sara2.png",
+    tech: ["UI/UX Design - Figma"],
+    github: "#",
+    live: "https://www.behance.net/gallery/235518021/Zara-Fashion-Online-Fashion-Store",
   },
 ];
 
