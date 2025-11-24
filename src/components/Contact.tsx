@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Mail, Github, Linkedin, Phone } from "lucide-react";
+import { FaBehance } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Contact: React.FC = () => {
@@ -86,7 +87,15 @@ const Contact: React.FC = () => {
                 <Github className="text-purple-400" size={20} />
                 <span>GitHub</span>
               </a>
-
+              <a
+                href="https://www.behance.net/sandunidimuthu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 text-white transition-all duration-300 border rounded-lg bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 hover:scale-105"
+              >
+                <FaBehance className="text-purple-400" size={20} />
+                <span>Behance</span>
+              </a>
               <a
                 href="https://www.linkedin.com/in/sanduni-ramanayake-a8a4152b3"
                 target="_blank"

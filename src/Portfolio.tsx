@@ -184,7 +184,16 @@ const projects = [
     github: "#",
     live: "https://www.behance.net/gallery/237726639/Eventia-Event-Management-Dashboard",
   },
-
+  /*  {
+    title: "RIDELanka – Vehicle Renting Mobile App",
+    description:
+      "A complete mobile app interface designed for tourists visiting Sri Lanka to easily browse, filter, and select vehicles for rent. The app connects tourists with local vehicle owners and provides a clean, intuitive experience focusing on clarity, usability, and real-world travel needs.",
+    image: "/ride.png",
+    tech: ["UI/UX Design – Figma"],
+    github: "#",
+    live: "https://www.behance.net/gallery/XXXXXXXXX/RIDELanka-Vehicle-Renting-App",
+  },
+*/
   {
     title: "PulseMe - Wellness Tracking App ",
     description:
@@ -214,7 +223,7 @@ const projects = [
     image: "/hear.png",
     tech: ["UI/UX Design - Adobe XD"],
     github: "#",
-    live: "#",
+    live: "https://www.behance.net/gallery/235515397/HearBeat-Mobile-Headphone-Selling-App",
   },
   {
     title: "Zara Fashion - Online Fashion Store",
