@@ -143,6 +143,20 @@ const projects = [
     live: "https://github.com/Sanduni-Ramanayake/toll-dashboard2.git",
   },
   {
+    title: "Ride Lanka – Vehicle Rental App",
+    description:
+      "A modern vehicle rental app where I designed the mobile UI/UX in Figma and built it into a functional front-end React Native app. Includes home, search, vehicle details,favorites and more with a clean, consistent, user-friendly design.",
+    image: "/ridelanka1.png",
+    tech: [
+      "UI/UX Design - Figma",
+      "Mobile App Dev - React Native + TypeScript ",
+      "Expo Router",
+    ],
+    github: "https://github.com/Sanduni-Ramanayake/Ride-Lanka.git",
+    live: "https://www.behance.net/gallery/239462897/Ride-Lanka-Vehicle-Renting-Mobile-App",
+  },
+
+  {
     title: "Postify - Blogging Platform ",
     description:
       "A modern full-stack blogging platform built with the MERN stack, featuring secure authentication, post creation and management, commenting, content categorization, and responsive design for seamless use across devices.",
@@ -156,6 +170,7 @@ const projects = [
     github: "#",
     live: "https://github.com/Sanduni-Ramanayake/blog-app.git",
   },
+
   {
     title: "Zesta - Pizza Restaurant Website ",
     description:
@@ -189,7 +204,8 @@ const projects = [
     description:
       "A complete mobile app interface designed for tourists visiting Sri Lanka to easily browse, filter, and select vehicles for rent. The app connects tourists with local vehicle owners and provides a clean, intuitive experience focusing on clarity, usability, and real-world travel needs.",
     image: "/ride.png",
-    tech: ["UI/UX Design – Figma"],
+    tech: ["UI/UX Design – Figma",
+    ],
     github: "#",
     live: "https://www.behance.net/gallery/XXXXXXXXX/RIDELanka-Vehicle-Renting-App",
   },
