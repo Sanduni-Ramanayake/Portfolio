@@ -128,7 +128,7 @@ const projects = [
     title: "MediLink - Healthcare Appointment Platform",
     description:
       "MediLink is a modern, responsive healthcare platform that connects patients with doctors. It offers easy appointment booking, digital prescription management, and health record tracking, all designed with clean UI/UX and accessibility in mind",
-    image: "/medi.jpeg",
+    image: "/med.jpeg",
     tech: ["UI/UX Design - Figma"],
     github: "#",
     live: "https://www.behance.net/gallery/235519655/MediLink-Healthcare-Appointment-Platform",
@@ -137,7 +137,7 @@ const projects = [
     title: "Highway Toll Control System ",
     description:
       " A 3rd-year ICT project integrating an AI-powered toll system with license plate recognition (YOLO + OCR), mobile violation reporting, and a real-time React.js dashboard.My role focused on frontend development & UI/UX design for the Toll Keeper Dashboard",
-    image: "/high.jpeg",
+    image: "/hii.jpeg",
     tech: ["UI/UX Design - Figma", " Frontend Dev - React.js , Tailwind CSS"],
     github: "#",
     live: "https://github.com/Sanduni-Ramanayake/toll-dashboard2.git",
@@ -160,7 +160,7 @@ const projects = [
     title: "Postify - Blogging Platform ",
     description:
       "A modern full-stack blogging platform built with the MERN stack, featuring secure authentication, post creation and management, commenting, content categorization, and responsive design for seamless use across devices.",
-    image: "/posti.jpeg",
+    image: "/p.png",
     tech: [
       "Frontend - React.js + Tailwind CSS ",
       "Backend - Node.js , Express",
@@ -175,7 +175,7 @@ const projects = [
     title: "Zesta - Pizza Restaurant Website ",
     description:
       "A modern, responsive web application for an online restaurant experience. Features include dynamic menu browsing, real-time promotional countdowns, secure authentication, an intuitive cart and ordering system",
-    image: "/zesta1.jpeg",
+    image: "/z.png",
     tech: ["Frontend - Next.js", "TypeScript", "Tailwind CSS"],
     github: "#",
     live: "https://github.com/Sanduni-Ramanayake/Zestza.git",
@@ -184,7 +184,7 @@ const projects = [
     title: " TravelX – Modern Sri Lanka Tourism Website ",
     description:
       "TravelX is a modern, fully responsive tourism website designed to showcase the beauty and attractions of Sri Lanka. It features an immersive video background, interactive booking forms, and well-structured sections for destinations, travel packages, and services",
-    image: "/travel2.jpg",
+    image: "/T.jpeg",
     tech: ["Frontend - HTML", "CSS", "JavaScript", "Bootstrap"],
     github: "#",
     live: "https://github.com/Sanduni-Ramanayake/TravelX",
@@ -245,7 +245,7 @@ const projects = [
     title: "Zara Fashion - Online Fashion Store",
     description:
       "A modern online clothing store concept with stylish UI, responsive layouts, and smooth e-commerce flows. Designed interactive prototypes to simulate real shopping experiences and enhance user-centric design.",
-    image: "/sara2.png",
+    image: "/sara3.jpeg",
     tech: ["UI/UX Design - Figma"],
     github: "#",
     live: "https://www.behance.net/gallery/235518021/Zara-Fashion-Online-Fashion-Store",
