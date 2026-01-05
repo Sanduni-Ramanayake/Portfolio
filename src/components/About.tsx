@@ -50,7 +50,7 @@ const About: React.FC<AboutProps> = ({ isVisible }) => (
             {[
               { icon: Mail, text: "sandunidimuthunee@gmail.com" },
               { icon: Phone, text: "+94 775488523" },
-              { icon: MapPin, text: "Matara,Sri Lanka" },
+              { icon: MapPin, text: "Colombo,Sri Lanka" },
             ].map(({ icon: Icon, text }, index) => (
               <div
                 key={index}
