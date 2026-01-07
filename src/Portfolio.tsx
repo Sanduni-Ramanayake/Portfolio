@@ -155,7 +155,14 @@ const projects = [
     github: "https://github.com/Sanduni-Ramanayake/Ride-Lanka.git",
     live: "https://www.behance.net/gallery/239462897/Ride-Lanka-Vehicle-Renting-Mobile-App",
   },
-
+  {
+    title: "UniLife – Student Productivity & Campus Life App",
+    description:
+      "A mobile app UI/UX case study designed in Figma to help university students manage academics, track attendance, organize tasks, and stay productive. The app includes onboarding flows, a student dashboard, academic planner, task management, attendance tracking and campus events.  ",
+    image: "/uni.png",
+    tech: ["UI/UX Design – Figma", ,],
+    live: "https://www.figma.com/proto/lSxfG81s216bGqJMoiJSuG/Untitled?node-id=0-1&t=Wcv9xbjcptlrtSCo-1",
+  },
   {
     title: "Postify - Blogging Platform ",
     description:
