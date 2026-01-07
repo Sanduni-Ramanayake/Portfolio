@@ -130,8 +130,9 @@ const projects = [
       "MediLink is a modern, responsive healthcare platform that connects patients with doctors. It offers easy appointment booking, digital prescription management, and health record tracking, all designed with clean UI/UX and accessibility in mind",
     image: "/med.jpeg",
     tech: ["UI/UX Design - Figma"],
-    github: "#",
-    live: "https://www.behance.net/gallery/235519655/MediLink-Healthcare-Appointment-Platform",
+    github:
+      "https://www.behance.net/gallery/235519655/MediLink-Healthcare-Appointment-Platform",
+    live: "https://www.figma.com/proto/6iM8eTMhdHfvzqxsXF2rog/MediLink.?node-id=0-1&t=uUbupuIOb5q0kBJW-1",
   },
   {
     title: "Highway Toll Control System ",
@@ -152,8 +153,9 @@ const projects = [
       "Mobile App Dev - React Native + TypeScript ",
       "Expo Router",
     ],
-    github: "https://github.com/Sanduni-Ramanayake/Ride-Lanka.git",
-    live: "https://www.behance.net/gallery/239462897/Ride-Lanka-Vehicle-Renting-Mobile-App",
+    github:
+      "https://www.behance.net/gallery/239462897/Ride-Lanka-Vehicle-Renting-Mobile-App",
+    live: "https://www.figma.com/proto/F94eFOXaYFLZLZyVS9EXNl/Ride-Lanka?t=uUbupuIOb5q0kBJW-1",
   },
   {
     title: "UniLife – Student Productivity & Campus Life App",
