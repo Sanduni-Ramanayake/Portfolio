@@ -32,11 +32,11 @@ const About: React.FC<AboutProps> = ({ isVisible }) => (
             Passionate About Creating Digital Experiences
           </h3>
           <p className="mb-6 text-base leading-relaxed text-gray-300">
-            I’m a 3rd-year Information and Communication Technology
-            undergraduate at the University of Sri Jayewardenepura with a strong
-            passion for UI/UX design and frontend development. I enjoy
-            transforming ideas into modern, responsive, and user-friendly
-            digital interfaces that deliver meaningful experiences.
+            I’m an Information and Communication Technology undergraduate at the
+            University of Sri Jayewardenepura with a strong passion for UI/UX
+            design and frontend development. I enjoy transforming ideas into
+            modern, responsive, and user-friendly digital interfaces that
+            deliver meaningful user experiences.
           </p>
           <p className="mb-8 text-base leading-relaxed text-gray-300">
             My work blends creativity with technical expertise, supported by
